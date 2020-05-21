@@ -1,4 +1,4 @@
-# NULS_wallet_2.0
+# Web_wallet
 
 ## Project setup
 ```
