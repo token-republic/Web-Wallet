@@ -1,13 +1,13 @@
 <template>
   <div class="consensus_info bg-gray">
     <div class="bg-white">
-      <div class="w1200">
+      <div class="">
         <BackBar :backTitle="$t('nav.consensus')"></BackBar>
         <h3 class="title uppercase">{{nodeInfo.agentId}}<i class="el-icon-star-off click" v-show="false"></i></h3>
       </div>
     </div>
 
-    <div class="card_long mt_20 w1200 bg-white">
+    <div class="card_long mt_20 bg-white">
       <h5 class="card-title font18">
         {{$t('consensusInfo.consensusInfo6')}}
         <i class="iconfont" :class="nodeInfo.status === 0 ? 'icondaigongshi fred' : 'icongongshizhong fCN'"></i>
@@ -50,7 +50,7 @@
     <div class="cb"></div>
 
     <div v-loading="nodeDepositLoading">
-      <div class="entrust w1200 bg-white" v-show="jionNode">
+      <div class="entrust bg-white" v-show="jionNode">
         <div class="entrust_add w630">
           <el-form :model="jionNodeForm" status-icon :rules="jionNodeRules" ref="jionNodeForm" @submit.native.prevent>
             <el-form-item :label="$t('consensusInfo.consensusInfo1') + '('+agentAsset.agentAsset.symbol+')'"

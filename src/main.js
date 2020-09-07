@@ -4,9 +4,6 @@ import router from './router'
 import store from './store'
 import i18n from './i18n'
 import {post} from './api/https'
-//bootstap import//
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
 //浏览器模式注释下面两行代码
 /*import VueElectron from 'vue-electron'
 Vue.use(VueElectron);*/

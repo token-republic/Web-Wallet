@@ -1,51 +1,32 @@
 @import "style";
 
-.el-menu {
-  border: 0 !important;
-  .el-menu-item {
-    font-size: 16px !important;
-    border: 0 !important;
-    color: @Fcolour !important;
-    &:hover {
-      color: @Ncolour !important;
-    }
-  }
-  .is-active {
-    border: 0 !important;
-    color: @Ncolour !important;
-  }
-  .el-submenu {
-    .el-submenu__title {
-      border-bottom: 0 !important;
-      font-size: 16px !important;
-      color: @Fcolour !important;
-      .el-submenu__icon-arrow {
-        margin: 35px 0 0 -22px;
-      }
-    }
-  }
-}
+// .el-menu {
+//   border: 0 !important;
+//   .el-menu-item {
+//     font-size: 16px !important;
+//     border: 0 !important;
+//     color: #000 !important;
+//     &:hover {
+//       color: #000 !important;
+//     }
+//   }
+//   .is-active {
+//     border: 0 !important;
+//     color: #000 !important;
+//   }
+//   .el-submenu {
+//     .el-submenu__title {
+//       border-bottom: 0 !important;
+//       font-size: 16px !important;
+//       color: #000!important;
+//       .el-submenu__icon-arrow {
+//         margin: 35px 0 0 -22px;
+//       }
+//     }
+//   }
+// }
 
-.el-tabs {
-  .el-tabs__header {
-    .el-tabs__nav-wrap {
-      .el-tabs__active-bar {
-        height: 0;
-      }
-      .el-tabs__item {
-        &:hover {
-          color: @Ncolour;
-        }
-      }
-      .is-active {
-        color: @Ncolour;
-      }
-      &::after {
-        height: 1px;
-      }
-    }
-  }
-}
+
 
 .el-select {
   .el-input {
@@ -55,7 +36,7 @@
       height: 32px;
       width: 150px;
       &:focus {
-        border-color: @Ncolour !important;
+        border-color: #000 !important;
       }
 
     }
@@ -77,7 +58,7 @@
         height: 30px;
       }
       .selected {
-        color: @Ncolour;
+        color: #000;
       }
     }
   }
@@ -85,7 +66,9 @@
 
 .el-table {
   th {
-    background-color: @Bcolour2 !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #fafafa!important;
     padding: 8px 0 !important;
   }
   .el-table__header-wrapper {
@@ -93,7 +76,7 @@
       .has-gutter {
         tr {
           th {
-            background-color: @Bcolour2;
+            background-color: #fafafa;
             border-right: 0;
           }
         }
@@ -116,7 +99,7 @@
 
     }
     .tab_line {
-      color: @Dcolour;
+      color: #000;
       padding: 0 10px;
     }
   }
@@ -162,16 +145,10 @@
   }
 }
 
-.el-switch {
-  .el-switch__label {
-
-  }
-}
-
 .is-checked {
   .el-switch__core {
-    border-color: @Ncolour !important;
-    background-color: @Ncolour !important;
+    border-color: #000 !important;
+    background-color: #000 !important;
   }
 }
 
@@ -181,29 +158,26 @@
   height: 50px;
   .el-pager {
     .active {
-      background-color: @Ncolour !important;
+      background-color: #000 !important;
     }
   }
 }
 
-.btn {
-  text-align: center;
   .el-button--success, .el-button--text, .el-button--info {
-    width: 400px;
+    text-align: center;
     margin: 0 auto !important;
-    background-color: #0D789C !important;
-    border-color: #0D789C !important;
+    background-color: @ULcolor !important;
+    border-color: @ULcolor !important;
   }
-}
  
 .el-dialog {
-  background-color: @Bcolour2 !important;
+  background-color: #fafafa !important;
   .el-dialog__header {
     border-bottom: @BD1;
     .el-dialog__headerbtn {
       top: -15px;
       right: -15px;
-      background-color: @Bcolour;
+      background-color: #000;
       height: 30px;
       width: 30px;
       border-radius: 15px;
@@ -328,27 +302,27 @@
   }
   .is-checked {
     .el-radio__inner {
-      border-color: @Ncolour !important;
-      background: @Ncolour !important;
+      border-color: #000 !important;
+      background: #000 !important;
     }
   }
 }
 
 .is-checked {
   .el-radio__label {
-    color: @Ncolour !important;
+    color: #000 !important;
   }
 }
 .el-checkbox-group{
   .is-checked {
     .is-checked {
       .el-checkbox__inner{
-        background-color:@Ncolour !important;
-        border-color: @Ncolour !important;
+        background-color:#000 !important;
+        border-color: #000 !important;
       }
     }
     .el-checkbox__label{
-      color: @Ncolour !important;
+      color: #000 !important;
     }
   }
 }

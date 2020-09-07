@@ -1,13 +1,13 @@
 <template>
   <div class="consensus_list bg-gray">
     <div class="bg-white">
-      <div class="w1200">
+      <div class="">
         <BackBar :backTitle="$t('nav.consensus')"></BackBar>
         <h3 class="title">{{$t('consensusList.consensusList0')}}</h3>
       </div>
     </div>
 
-    <div class="w1200 mt_20">
+    <div class="mt_20">
       <div class="top_total font12">
         {{$t('public.totalStake')}}：{{this.$route.query.consensusLock}} <span class="fCN">{{agentAsset.agentAsset.symbol}}</span>
       </div>

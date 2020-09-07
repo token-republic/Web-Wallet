@@ -18,7 +18,7 @@ body, div, dl, dt, dd, ul, ol, li, p, h1, h2, h3, h4, h5, h6, pre, form, fieldse
   margin: 0;
   padding: 0;
   font-family: @fontF, sans-serif;
-  color: @Fcolour;
+  color: @Fcolor;
   font-weight: 400
 }
 
@@ -46,7 +46,7 @@ q:before, q:after {
 
 a {
   text-decoration: none;
-  color: @Fcolour;
+  color: #000;
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -77,7 +77,7 @@ u {
 
 .td {
   text-decoration: none;
-  border-bottom: 1px solid @Ccolour;
+  border-bottom: 1px solid #000;
 }
 
 .fw {
@@ -153,7 +153,7 @@ u {
 }
 
 .font16 {
-  font-size: 16px;
+  font-size: 16px!important;
   line-height: 16px;
 }
 
@@ -198,15 +198,15 @@ u {
 }
 
 .fCN {
-  color: @Ncolour;
+  color: #000;
 }
 
 .flan {
-  color: @Ccolour;
+  color: @Ccolor;
 }
 
 .fwhite {
-  color: @Bcolour;
+  color: #000;
 }
 
 .fred {
@@ -226,16 +226,16 @@ u {
 }
 
 .bg-white {
-  background-color: @Bcolour;
+  background-color: @BcolorW;
 }
 
 .bg-gray {
-  background-color: @Bcolour1;
+  background-color:;
 }
 
 /**可点击的手指样式**/
 .click {
-  color: @Ccolour;
+  color: @Ccolor;
   cursor: pointer;
 }
 
@@ -294,16 +294,13 @@ u {
 }
 
 .title {
-  text-align: center;
-  height: 100px;
-  line-height: 100px;
   font-size: 18px;
   span {
     font-size: 14px;
   }
   i {
     font-size: 20px;
-    color: @Ccolour;
+    color: @Ccolor;
     margin: 0 0 0 10px;
   }
 }
@@ -314,19 +311,18 @@ u {
     font-size: 14px;
     float: left;
   }
-  .el-pagination {
-  }
+
 }
 
 .card-title {
   line-height: 50px;
-  background-color: @Bcolour1;
+  background-color: @BcolorW;
   border-bottom: @BD1;
   height: 50px;
   padding: 0 0 0 40px;
   font-weight: 500;
   span {
-    margin: 20px 40px 0 0;
+    margin: 20px 0 0 0;
   }
 }
 
@@ -335,7 +331,7 @@ u {
     border: @BD1;
     border-radius: 2px;
     ul {
-      background-color: @Bcolour;
+      background-color: @BcolorW;
       padding: 0 40px;
       li {
         border-bottom: @BD1;
@@ -348,7 +344,7 @@ u {
         label {
           float: right;
           span {
-            margin: 0 0 0 10px;
+            margin: 0 0 0 0px;
           }
         }
       }
@@ -360,7 +356,7 @@ u {
   border: @BD1;
   border-radius: 2px;
   ul {
-    background-color: @Bcolour;
+    background-color: @BcolorW;
     padding: 0 20px;
     li {
       border-top: @BD1;
@@ -425,9 +421,9 @@ u {
   height: 20px;
   text-align: center;
   line-height: 20px;
-  border: @Ccolour 1px solid;
+  border: @Ccolor 1px solid;
   .el-icon-plus {
-    color: @Ccolour;
+    color: @Ccolor;
   }
 }
 
@@ -436,5 +432,3 @@ u {
   z-index: 9;
   position: absolute;
 }
-
-

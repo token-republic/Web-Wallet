@@ -1,23 +1,20 @@
 <template>
-  <div>
-    <div class="bottom">
-      <div class="w1200 font14">
-        <div class="left fl">
-          <p class="fl">
+  <el-footer>
+        <div>
+          <p>
             {{$t('bottom.serviceNode')}}:
             <u class="click" @click="toUrl('nodeService')">{{serviceUrls.urls}}</u>
           </p>
         </div>
-        <div class="right fr">
+        <div>
           {{$t('bottom.nodeHeight')}}:
           <i v-show="heightInfo.networkHeight ===0 && heightInfo.localHeight===0 " class="el-icon-loading"></i>
           <span v-show="heightInfo.networkHeight !==0 && heightInfo.localHeight !==0 ">
             {{heightInfo.networkHeight}}/{{heightInfo.localHeight}}
           </span>
         </div>
-      </div>
-    </div>
-  </div>
+
+  </el-footer>
 </template>
 
 <script>
@@ -156,53 +153,58 @@
 
 <style lang="less">
   @import "./../assets/css/style";
-
-  .bottom {
-    height: 60px;
-    border-top: 1px solid @Dcolour;
-    position: fixed;
-    line-height: 60px;
-    bottom: 0;
-    background-color: @Bcolour;
-    width: 100%;
-    z-index: 99;
-    @media screen and (max-width: 1000px) {
-      height: 4rem;
-      font-size: 0.7rem;
-      line-height: 1rem;
-    }
-    .w1200 {
-      .left {
-        width: 50%;
-        line-height: 60px;
-        @media screen and (max-width: 1000px) {
-          width: 100%;
-          margin: 0.5rem 0 0 0.5rem;
-          p {
-            margin: 0;
-            float: none;
-            display: block;
-          }
-        }
-      }
-      .right {
-        width: 40%;
-        line-height: 60px;
-        text-align: right;
-        @media screen and (max-width: 1000px) {
-          width: 100%;
-          float: none;
-        }
-        label {
-          padding: 0 10px;
-          @media screen and (max-width: 1000px) {
-            padding: 0 0.5rem;
-            font-size: 0.7rem;
-            line-height: 1rem;
-          }
-        }
-      }
-    }
-
+  .el-footer{
+    background-color: @BcolorW;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
+  // .bottom {
+  //   height: 60px;
+  //   border-top: 1px solid @Dcolor;
+  //   position: fixed;
+  //   line-height: 60px;
+  //   bottom: 0;
+  //   background-color: @BcolorW;
+  //   width: 100%;
+  //   z-index: 99;
+  //   @media screen and (max-width: 1000px) {
+  //     height: 4rem;
+  //     font-size: 0.7rem;
+  //     line-height: 1rem;
+  //   }
+  //   .w1200 {
+  //     .left {
+  //       width: 50%;
+  //       line-height: 60px;
+  //       @media screen and (max-width: 1000px) {
+  //         width: 100%;
+  //         margin: 0.5rem 0 0 0.5rem;
+  //         p {
+  //           margin: 0;
+  //           float: none;
+  //           display: block;
+  //         }
+  //       }
+  //     }
+  //     .right {
+  //       width: 40%;
+  //       line-height: 60px;
+  //       text-align: right;
+  //       @media screen and (max-width: 1000px) {
+  //         width: 100%;
+  //         float: none;
+  //       }
+  //       label {
+  //         padding: 0 10px;
+  //         @media screen and (max-width: 1000px) {
+  //           padding: 0 0.5rem;
+  //           font-size: 0.7rem;
+  //           line-height: 1rem;
+  //         }
+  //       }
+  //     }
+  //   }
+
+  // }
 </style>

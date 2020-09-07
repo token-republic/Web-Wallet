@@ -5,8 +5,8 @@
       <span v-show="addressInfo.alias"> | {{addressInfo.alias}}</span>
       <i class="iconfont icon-fuzhi clicks" @click="copy(addressInfo.address)"></i>
     </h3>
-    <div class="card w1200">
-      <div class="card-info left fl">
+    <div class="card">
+      <div class="card-info">
         <h5 class="card-title font18">
           {{$t('consensus.consensus0')}}
           <span class="font14 fr">{{Number(addressInfo.totalReward).toFixed(3)}}<font class="fCN"> {{addressInfo.symbol}}</font></span>
@@ -30,7 +30,7 @@
           </li>
         </ul>
       </div>
-      <div class="card-info right fr">
+      <div class="card-info">
         <h5 class="card-title font18">
           {{$t('consensus.consensus4')}}
           <span class="font16 click fr" @click="toUrl('newConsensus')" v-show="!isNew && !isRed">
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="cb"></div>
-    <el-tabs v-model="consensusActive" @tab-click="handleClick" class="w1200">
+    <el-tabs v-model="consensusActive" @tab-click="handleClick">
       <el-tab-pane :label="$t('consensus.consensus9')" name="consensusFirst">
         <div class="filter">
           <SelectBar v-model="nodeStatusRegion" :typeOptions="nodeStatusOptions" typeName="nodeStatus"
@@ -548,24 +548,27 @@
   @import "./../../assets/css/style";
 
   .consensus {
+    .title{
+      margin: 20px 0;
+    }
     .card {
-      margin: -20px auto 0;
-      height: 200px;
-      .left, .right {
-        width: 590px;
+      display: flex;
+      justify-content: space-between;
+      .card-info{
+        width: 48%;
+        .card-title{
+          padding: 0 40px; 
+        }
       }
     }
     .node {
-      margin: 0 0 100px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
       .node_info {
         border: @BD1;
-        width: 285px;
-        height: 175px;
-        margin: 20px 20px 0 0;
-        float: left;
-        &:nth-child(4n) {
-          margin: 20px 0 0 0;
-        }
+        width: 24%;
+        margin: 10px 0;
         h4 {
           height: 32px;
           line-height: 32px;

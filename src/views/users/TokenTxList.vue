@@ -1,13 +1,13 @@
 <template>
   <div class="txlist">
     <div class="">
-      <div class="w1200">
+      <div>
         <BackBar :backTitle="$t('nav.wallet')"></BackBar>
         <h3 class="title">Token{{$t('home.home2')}}</h3>
       </div>
     </div>
 
-    <div class="w1200">
+    <div>
       <div v-loading="txListDataLoading">
         <div class="filter">
           <el-select :value="tokenValue==='0' ? $t('public.allToke') : tokenValue" @change="channgeType">

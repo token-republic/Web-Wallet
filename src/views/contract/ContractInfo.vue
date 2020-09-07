@@ -395,7 +395,7 @@
   @import "./../../assets/css/style";
 
   .contract-info {
-    background-color: @Bcolour1;
+    background-color: @BcolorW;
     .card_long {
       height: 140px;
     }

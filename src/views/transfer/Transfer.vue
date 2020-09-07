@@ -1,7 +1,7 @@
 <template>
   <div class="transfer" v-loading="transferLoading">
     <h3 class="title">{{changeAssets.account}} {{$t('nav.transfer')}}</h3>
-    <div class="w1200" v-loading="loading" :element-loading-text="$t('transfer.transfer22')">
+    <div v-loading="loading" :element-loading-text="$t('transfer.transfer22')">
       <el-form :model="transferForm" :rules="transferRules" ref="transferForm" status-icon>
         <el-form-item :label="$t('transfer.transfer0')">
           <el-input v-model.trim="transferForm.fromAddress" disabled>
@@ -238,7 +238,7 @@
         transferForm: {
           fromAddress: '',
           toAddress: '',
-          type: this.$route.query.accountType ? this.$route.query.accountType.account : 'NULS',
+          type: this.$route.query.accountType ? this.$route.query.accountType.account : 'TNX',
           amount: '',
           senior: false,
           gas: this.gasNumber,
@@ -252,7 +252,7 @@
           price: [{validator: validatePrice, trigger: 'blur'}],
         }, //验证信息
         fee: 0.001, //手续费
-        feeSymbol: "NULS",//手续费显示单位
+        feeSymbol: "TNX",//手续费显示单位
         contractInfo: {},//向合约地址转账是 合约信息
         transferVisible: false,//转账确认弹框
         isCross: false,//是否跨链交易
@@ -514,7 +514,7 @@
             } else { //跨链交易
               this.isCross = true;
               this.fee = 0.01;
-              this.feeSymbol = "NULS";
+              this.feeSymbol = "TNX";
               //跨链交易默认选中NULS
               if (this.changeAssets.type === 2) {
                 this.changeNuls();

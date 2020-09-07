@@ -1,34 +1,30 @@
 <template>
-    <div id="app" class="app">
-        <HeaderBar>
-        </HeaderBar>
-        <router-view>
-        </router-view>
-        <BottomBar>
-        </BottomBar>
-    </div>
+  <div id="app" class="app">
+    <el-container>
+      <HeaderBar></HeaderBar>
+      <el-container class="is-vertical">
+        <el-main>
+          <router-view></router-view>
+        </el-main>
+        <BottomBar></BottomBar>
+      </el-container>
+    </el-container>
+  </div>
 </template>
 
 <script>
-  import HeaderBar from './components/HeaderBar'
-  import BottomBar from './components/BottomBar'
+import HeaderBar from "./components/HeaderBar";
+import BottomBar from "./components/BottomBar";
 
-  export default {
-    components: {
-      HeaderBar,
-      BottomBar
-    },
-    methods: {}
-  }
+export default {
+  components: {
+    HeaderBar,
+    BottomBar,
+  },
+  methods: {},
+};
 </script>
 
 <style lang="less">
-    @import "assets/css/base.less";
-    .app { 
-        height: 100vh;
-        background-image:url(./assets/img/gradientBG.jpg);
-        background-position: left;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-            }
+@import "assets/css/base.less";
 </style>

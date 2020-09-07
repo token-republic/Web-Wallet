@@ -44,7 +44,7 @@
       text-align: left;
       width: 200px;
       &:hover{
-        color:@Hcolour;
+        color:#000;
        }
     }
   @media screen and (max-width: 768px) {

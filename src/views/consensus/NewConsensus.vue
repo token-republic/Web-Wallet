@@ -2,13 +2,13 @@
   <div class="new_consensus bg-gray">
 
     <div class="bg-white">
-      <div class="w1200">
+      <div class="">
         <BackBar :backTitle="$t('nav.consensus')"></BackBar>
         <h3 class="title">{{$t('newConsensus.newConsensus0')}}</h3>
       </div>
     </div>
 
-    <div class="w1200 bg-white mt_20">
+    <div class="bg-white mt_20">
       <el-form :model="createrForm" :rules="createrRules" ref="createrForm">
         <el-form-item :label="$t('public.createAddress')">
           <el-input v-model.trim="addressInfo.address" disabled>

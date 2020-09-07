@@ -449,12 +449,12 @@
               .el-button {
                 width: 130px;
                 span {
-                  color: @Bcolour;
+                  color: #000;
                 }
               }
               .el-button--default {
                 span {
-                  color: @Fcolour;
+                  color: #000;
                 }
               }
             }

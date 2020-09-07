@@ -235,13 +235,13 @@
           text-align: center;
           .dotted {
             margin: 20px 0 0 0;
-            border-bottom: 2px dotted @Dcolour;
+            border-bottom: 2px dotted #000;
           }
           .Ndotted {
-            border-bottom-color: @Ncolour;
+            border-bottom-color: #000;
           }
           .Ncolor {
-            color: @Ncolour;
+            color: #000;
           }
           .ico {
             i {

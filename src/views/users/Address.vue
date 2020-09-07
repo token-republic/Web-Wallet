@@ -2,7 +2,7 @@
   <div class="address">
     <h3 class="title">{{$t('address.address0')}}</h3>
 
-    <div class="w1200 mt_20">
+    <div class="mt_20">
       <div class="top_ico">
         <i class="el-icon-plus click" @click="toUrl('newAddress')"></i>
       </div>
@@ -331,7 +331,7 @@
 
   .address {
     .el-dialog__body {
-      background-color: @Bcolour;
+      background-color: #000;
       padding: 30px 20px 50px 20px;
       .address-remark {
         margin: 50px auto 0;

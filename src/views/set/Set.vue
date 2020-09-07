@@ -7,7 +7,7 @@
         </h3>
       </div>
     </div>
-    <div class="w1200 mt_20 bg-white set_info">
+    <div class="mt_20 bg-white set_info">
       <div class="tc mzt_20">
         <h4 class="font24 mb_20">{{symbol}} Wallet</h4>
         <!--<p class="font16">{{$t('public.logInfo')}}: <span class="click" @click="seeLog">{{$t('public.see')}}</span></p>-->

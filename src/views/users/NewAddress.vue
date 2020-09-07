@@ -1,7 +1,7 @@
 <template>
+
   <div class="import-address">
-    <div class="container" style="">
-      <el-tabs v-model="activeName" @tab-click="handleClick" class="new_import">
+      <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane :label="$t('importAddress.importAddress2')" name="keystoreImport" :disabled="resetAddress !=='0'">
           <div class="tc upload_keystore">
             <el-upload drag class="upload" action="localhost" accept='.keystore' v-if="!isfileReader"
@@ -16,11 +16,11 @@
           </div>
         </el-tab-pane>
         <el-tab-pane :label="$t('importAddress.importAddress3')" name="keyImport">
-          <div class="tab mt_30">
+          <div class="tab w1200 mt_30">
             <div class="tc font18 mzt_20" v-if="resetAddress !=='0'">
               {{$t('public.resetAddress')}}: {{resetAddress}}
             </div>
-            <el-form :model="importForm" :rules="importRules" ref="importForm" status-icon class="import-form">
+            <el-form :model="importForm" :rules="importRules" ref="importForm" status-icon class="import-form w630">
               <el-form-item :label="$t('importAddress.importAddress5')" prop="keys">
                 <el-input type="textarea" v-model.trim="importForm.keys" autocomplete="off"></el-input>
               </el-form-item>
@@ -52,7 +52,7 @@
         <el-tab-pane :label="$t('importAddress.importAddress0')" name="newAddress" :disabled="resetAddress !=='0'">
           <div class="new_address">
             <el-form :model="newAddressForm" status-icon :rules="newAddressRules" ref="newAddressForm"
-                     class="addressForm">
+                     class="w630">
               <el-form-item :label="$t('newAddress.newAddress6')" prop="pass">
                 <el-input type="password" v-model="newAddressForm.pass" autocomplete="off"></el-input>
               </el-form-item>
@@ -73,7 +73,6 @@
           </div>
         </el-tab-pane>
       </el-tabs>
-    </div>
     <Password ref="password" @passwordSubmit="keystoreImportPassSubmit">
     </Password>
   </div>
@@ -94,7 +93,6 @@
   } from '@/api/util'
   import {getPrefixByChainId} from '@/api/requestData'
   import Password from '@/components/PasswordBar'
-
   export default {
     data() {
       let validateKeys = (rule, value, callback) => {
@@ -128,7 +126,6 @@
           callback();
         }
       };
-
       let validateNewPass = (rule, value, callback) => {
         let patrn = /^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{8,20}$/;
         if (value === '') {
@@ -183,7 +180,6 @@
         },
         importAddressInfo: {},//私钥导入地址信息
         importRandomString: '',//扫描导入随机字符串
-
         newAddressForm: {
           pass: '',
           checkPass: '',
@@ -223,7 +219,6 @@
       clearInterval(this.scanImportInterval);
     },
     methods: {
-
       /**
        * @disc: 生成扫描登录的二维码
        * @date: 2019-12-02 16:38
@@ -246,7 +241,6 @@
         });
         qrcode.makeCode(JSON.stringify(scanInfo))
       },
-
       /**
        * @disc: tab选择
        * @params: tab
@@ -273,7 +267,6 @@
           this.$refs['importForm'].resetFields();
         }
       },
-
       /**
        * @disc: 获取扫描导入后的信息
        * @params: importRandomString
@@ -293,7 +286,6 @@
             console.log(error);
           });
       },
-
       /**
        * 获取地址NULS资产信息
        * @param addressInfo
@@ -329,7 +321,6 @@
             this.toUrl('address')
           })
       },
-
       /**
        * @disc: 获取kestore信息
        * @params: file
@@ -347,7 +338,6 @@
         });
         reader.readAsText(file, "utf-8");
       },
-
       /**
        * @disc: keystore 导入密码框提交
        * @params: password
@@ -367,7 +357,6 @@
           this.$message({message: this.$t('address.address13'), type: 'error', duration: 3000});
         }
       },
-
       /**
        * @disc: 私钥导入账户提交
        * @params: formName
@@ -389,7 +378,6 @@
           }
         });
       },
-
       /**
        * @disc: 创建账户提交
        * @params: formName
@@ -414,7 +402,6 @@
           }
         });
       },
-
       /**
        * @disc: 连接跳转
        * @params: name
@@ -435,90 +422,141 @@
 </script>
 
 <style lang="less">
-  .import-address {
-    .bg-white {
-      height: 130px;
-    }
-    .new_import {
-      // margin: -90px auto 100px;
-      .el-tabs__header {
-        margin: 0;
-        .el-tabs__nav-wrap {
+
+@import "./../../assets/css/style";
+
+.el-main{
+  background: #fff;
+  .import-address{
+    .el-tabs--top{
+      .el-tabs__header{
+        margin: 20px 0;
+        .el-tabs__nav-wrap{
           text-align: center;
-          &:after {
-            background-color: transparent;
+          &:after{
+            height: 0;
           }
-        }
-        .el-tabs__nav-scroll {
-          display: flex;
-          justify-content: flex-end;
-          .el-tabs__nav {
-            
-            .el-tabs__active-bar {
+          .el-tabs__nav-scroll{
+            .el-tabs__nav{
+              float: none;
+              .el-tabs__active-bar {
               height: 0;
             }
             .el-tabs__item {
+              color: @Fcolor;
               text-align: center;
-              padding: 0 10px;
-              margin: 20px 10px;
+              padding: 0 25px;
+              margin: 10px 20px 20px;
               border-radius: 4px;
+              text-decoration: none;
+              background-image: linear-gradient(#ffa41b, #ffa41b);
+              background-size: 0 3px, auto;
+              background-repeat: no-repeat;
+              background-position: center bottom;
+              transition: all .2s ease-out;
               &:hover {
-                background: linear-gradient(to right, #0D789C, #0D789C);
-                color: #FFFFFF;
+                background-size: 100% 3px, auto;
               }
             }
             .is-active {
-              background: linear-gradient(to right, #0D789C, #0D789C);
+              background: linear-gradient(to right, #ffa41b, #ffa41b);
               color: #FFFFFF;
+            }
             }
           }
         }
       }
-      .el-tabs__content {
-        margin-top: 100px;
-        width: 50%;
-        transform: translateX(50%);
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 20px;
-        border: 2px dashed #999;
-        .upload_keystore {
-          padding: 100px 0 100px 0;
-          // border: 1px solid #E4E7ED;
-        }
-        .form-bnt {
-          text-align: center;
-          .el-button--success {
-            width: 190px;
-            background-color: #0D789C;
-            border-color: #0D789C;
-          }
-        }
-        .tab {
-          padding: 0 20px;
-          // border: 1px solid #E4E7ED;
-          .import-form {
-            margin: 60px auto 100px;
-          }
-        }
+      .el-tabs__content{
+        padding: 50px 0;
         .scan {
           width: 100%;
-          min-height: 450px;
           margin: 0 auto;
           padding: 80px 0 0 0;
-          // border: 1px solid #E4E7ED;
           .qrcode {
             width: 250px;
             margin: 0 auto;
           }
         }
-        .new_address {
-          padding: 0 20px;
-          // border: 1px solid #E4E7ED;
-          .addressForm {
-            margin: 60px auto 100px;
-          }
-        }
       }
     }
   }
+}
+  // .import-address {
+    
+  //   .new_import {
+  //     margin: -90px auto 100px;
+  //     .el-tabs__header {
+  //       margin: 0;
+  //       .el-tabs__nav-wrap {
+  //         text-align: center;
+  //         &:after {
+  //           height: 1px;
+  //         }
+  //       }
+  //       .el-tabs__nav-scroll {
+  //         .el-tabs__nav {
+  //           float: none;
+  //           .el-tabs__active-bar {
+  //             height: 0;
+  //           }
+  //           .el-tabs__item {
+  //             text-align: center;
+  //             padding: 0 25px;
+  //             margin: 10px 20px 20px;
+  //             border-radius: 4px;
+  //             text-decoration: none;
+  //             background-image: linear-gradient(#ffa41b, #ffa41b);
+  //             background-size: 0 3px, auto;
+  //             background-repeat: no-repeat;
+  //             background-position: center bottom;
+  //             transition: all .2s ease-out;
+  //             &:hover {
+  //               background-size: 100% 3px, auto;
+  //             }
+  //           }
+  //           .is-active {
+  //             background: linear-gradient(to right, #ffa41b, #ffa41b);
+  //             color: #FFFFFF;
+  //           }
+  //         }
+  //       }
+  //     }
+  //     .el-tabs__content {
+  //       background-color: #FFFFFF;
+  //       .upload_keystore {
+  //         padding: 100px 0 100px 0;
+  //         border: 1px solid #E4E7ED;
+  //       }
+  //       .form-bnt {
+  //         text-align: center;
+  //         .el-button--success {
+  //           width: 190px;
+  //         }
+  //       }
+  //       .tab {
+  //         border: 1px solid #E4E7ED;
+  //         .import-form {
+  //           margin: 60px auto 100px;
+  //         }
+  //       }
+  //       .scan {
+  //         width: 100%;
+  //         min-height: 500px;
+  //         margin: 0 auto;
+  //         padding: 80px 0 0 0;
+  //         border: 1px solid #E4E7ED;
+  //         .qrcode {
+  //           width: 250px;
+  //           margin: 0 auto;
+  //         }
+  //       }
+  //       .new_address {
+  //         border: 1px solid #E4E7ED;
+  //         .w630 {
+  //           margin: 60px auto 100px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 </style>
